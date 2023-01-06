@@ -4,15 +4,15 @@ import Login from './components/Login';
 import Player from './components/Player';
 import { token } from './components/Spotify';
 
+
 function App() {
   
   return (
     <div className="App">
-      <h1>Let's Freaking Gooo 🚀🚀</h1>
+      <h1>Music Clone 📻</h1>
       {
         token ? <Player /> : <Login />
       }
-      
     </div>
   );
 }

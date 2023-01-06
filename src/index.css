@@ -1,6 +1,5 @@
-* {
-  margin: 0;
-}
+@import url('https://fonts.googleapis.com/css2?family=Rubik+Gemstones&display=swap');
+
 
 body {
   margin: 0;
@@ -16,4 +15,21 @@ code {
     monospace;
 }
 
+
+.playlist-content {
+  display: flex;
+  justify-content: center;
+  padding: 2em;
+}
+
+.list-items{
+  display: flex;
+  justify-content: space-evenly;
+  padding: 1em;
+}
+
+.playlist_cover img{
+  width: 100px;
+
+}
 

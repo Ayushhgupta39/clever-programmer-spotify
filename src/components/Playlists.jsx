@@ -15,22 +15,27 @@ export default function Playlists() {
           },
         }
       );
-      const { items } = response.data;
-      const playlists = items.map((name, id) => {
-        return { name, id };
-      });
-      setPlaylists(items)
+      const items = response.data.items;
+      setPlaylists(items);
+      console.log(items);
     };
     getPlaylist();
   }, []);
-  console.log(playlists);
   return (
-    <div>
+    <div className="playlist-content">
       <ul>
-        {playlists.map(({ name, id }) => {
+        {playlists.map((values, id) => {
           return (
             <li key={id}>
-              {name.name}
+              <div className="list-items">
+                <div className="playlist_name">{values.name}</div>
+                <div className="playlist_owner">
+                  {values.owner.display_name}
+                </div>
+                <div className="playlist_cover">
+                  <img src={values.images[0].url} alt="" />
+                </div>
+              </div>
             </li>
           );
         })}
