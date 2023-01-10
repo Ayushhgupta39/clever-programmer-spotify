@@ -17,12 +17,13 @@ export default function Playlists() {
       );
       const items = response.data.items;
       setPlaylists(items);
-      console.log(items);
     };
     getPlaylist();
   }, []);
-  return (
-    <div className="playlist-content">
+  return (  
+    <div>
+    <h3>Playlists</h3>
+      <div className="playlist-content">
       <ul>
         {playlists.map((values, id) => {
           return (
@@ -40,6 +41,7 @@ export default function Playlists() {
           );
         })}
       </ul>
+    </div>
     </div>
   );
 }

@@ -1,4 +1,3 @@
-import { useEffect } from 'react';
 import './App.css';
 import Login from './components/Login';
 import Player from './components/Player';
@@ -9,7 +8,6 @@ function App() {
   
   return (
     <div className="App">
-      <h1>Music Clone 📻</h1>
       {
         token ? <Player /> : <Login />
       }

@@ -1,10 +1,9 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
 import SpotifyWebPlayer from "react-spotify-web-playback/lib";
 import Playlists from "./Playlists";
 import { token } from "./Spotify";
-
+import User from "./User";
 
 export default function Player() {
   const [trackUri, setTrackUri] = useState(null);
@@ -27,15 +26,20 @@ export default function Player() {
   }, []);
   return (
     <div>
+      <User />
       <Playlists />
-      {/* <SpotifyWebPlayer
+      <SpotifyWebPlayer
         token={token}
         uris={[trackUri]}
         magnifySliderOnHover
         name="Buzz"
         syncExternalDevice
-      /> */}
-      <a href="/"><button className="btn btn-primary"><i className="fa-solid fa-play"></i>Exit</button></a>
+      />
+      <a href="/">
+        <button className="btn btn-primary">
+          <i className="fa-solid fa-play"></i>Exit
+        </button>
+      </a>
     </div>
   );
 }
